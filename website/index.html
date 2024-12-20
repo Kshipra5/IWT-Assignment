@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAKE MY DAY</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5dc; /* Beige background */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #f8e8d1; /* Lighter beige for navigation bar */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to navbar */
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #4b3621; /* Dark brown */
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #4b3621; /* Dark brown */
+            font-size: 18px;
+        }
+
+        .navbar .menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-image: url('background.jpg'); /* Full-width background image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 550px;
+            background-color: rgba(255, 255, 255, 0.6);
+            background-blend-mode: lighten;
+        }
+
+        .hero-title {
+            font-size: 100px; /* Increased font size */
+            font-weight: bold;
+            color: #4b3621; /* Dark brown */
+            font-family: 'Times New Roman', Times, serif; /* Stylish font */
+            letter-spacing: 5px; /* Add spacing for elegance */
+            text-transform: uppercase; /* Ensure uppercase for impact */
+            margin: 0;
+            text-align: center; /* Center the text */
+            line-height: 1.2; /* Adjust spacing between lines */
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-family: 'Times New Roman', Times, serif; /* Unique header font for a modern touch */
+            letter-spacing: 2px;
+            margin: 20px 0;
+            color: #4b3621; /* Dark brown */
+        }
+
+        .hero p {
+            font-family: 'Open Sans', sans-serif; /* Comfortable, readable font */
+            line-height: 1.6;
+            font-size: 18px;
+            color: #6e4b3f; /* Medium brown */
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background-color: #ce9781; /* Light beige background for consistency */
+            height: 510px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px; /* Adds spacing between menu items */
+            padding: 40px 20px;
+        }
+
+        .menu-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .menu-item img {
+            width: 210px;
+            height: 210px;
+            border-radius: 10px; /* Rounded corners for menu images */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+        }
+
+        .menu-item h4 {
+            margin-top: 10px;
+            font-family: 'Oswald', sans-serif; /* Consistent with header font */
+            color: #4b3621; /* Dark brown */
+        }
+
+        .menu-section h1 {
+            color: #4b3621;
+            font-size: 55px; 
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff; /* White background for the modal content */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly elevated modal for prominence */
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            font-family: 'Oswald', sans-serif; /* Header font for modal */
+            margin-bottom: 20px;
+        }
+
+        .modal-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-content ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #6e4b3f; /* Medium brown for flavor text */
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4b3621;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Section Anchors */
+        section {
+            padding-top: 60px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">BAKE MY DAY</div>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1 class="hero-title">BAKE MY DAY</h1>
+        <h1>Cooking Something Beyond Expectations</h1>
+        <p>Discover the taste of perfection at Bake My Day.</p>
+    </div>
+
+    <!-- Menu Section -->
+    <div id="menu" class="menu-section">
+        <h1><center>MENU</center></h1>
+        <div class="menu-items">
+            <div class="menu-item" onclick="showFlavors('Pastries')">
+                <img src="pastery.jpg" alt="Pastries">
+                <h2>Pastries</h2>
+            </div>
+            <div class="menu-item" onclick="showFlavors('Donuts')">
+                <img src="donut.jpg" alt="Donuts">
+                <h2>Donuts</h2>
+            </div>
+            <div class="menu-item" onclick="showFlavors('Cakes')">
+                <img src="cake.jpg" alt="Cakes">
+                <h2>Cakes</h2>
+            </div>
+            <div class="menu-item" onclick="showFlavors('Croissants')">
+                <img src="croissants.jpg" alt="Croissants">
+                <h2>Croissants</h2>
+            </div>
+            <div class="menu-item" onclick="showFlavors('Muffins')">
+                <img src="muffin.jpg" alt="Muffins">
+                <h2>Muffins</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="flavorModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Flavors</h3>
+            <ul id="flavorList"></ul>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Bake My Day, we believe in crafting delightful baked goods that not only satisfy your cravings but also create lasting memories. With a passion for perfection and a commitment to quality, we specialize in offering a wide range of delicious pastries, cakes, and more. Our expert bakers use the finest ingredients to ensure every bite is a moment of joy. Whether you're seeking a sweet treat to brighten your day or looking to celebrate a special occasion, Bake My Day is your go-to destination for irresistible flavors. Join us in savoring the art of baking excellence.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: bakemyday@example.com | Phone: +91 98765 43210</p>
+    </section>
+
+    <script>
+        const flavors = {
+            'Pastries': [
+                'Chocolate Truffle - ₹120',
+                'Red Velvet - ₹150',
+                'Black Forest - ₹100',
+                'Pineapple - ₹90',
+                'Biscoff -200'
+            ],
+            'Donuts': [
+                'Glazed - ₹50',
+                'Chocolate Sprinkles - ₹70',
+                'Custard Filled - ₹80',
+                'Strawberry - ₹60',
+                'Oreo-₹100'
+            ],
+            'Cakes': [
+                'Vanilla - ₹500',
+                'Chocolate - ₹550',
+                'Fruit Cake - ₹600',
+                'Cheesecake - ₹700',
+                'Strawberry cake-₹500'
+            ],
+            'Croissants': [
+                'Butter - ₹60',
+                'Almond - ₹80',
+                'Chocolate - ₹90',
+                'Hazelnut-₹150',
+                'Rose-₹120'
+            ],
+            'Muffins': [
+                'Blueberry - ₹70',
+                'Chocolate Chip - ₹60',
+                'Banana Walnut - ₹80',
+                'Vanilla-₹70',
+                'Mango-₹90'
+            
+
+
+            ]
+        };
+
+        function showFlavors(item) {
+            const modal = document.getElementById('flavorModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const flavorList = document.getElementById('flavorList');
+
+            modalTitle.textContent = item;
+            flavorList.innerHTML = flavors[item].map(flavor => `<li>${flavor}</li>`).join('');
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('flavorModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
